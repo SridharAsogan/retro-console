@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Classic Brick Console 9999 in 1</title>
+  <link rel="stylesheet" href="css/console.css" />
+</head>
+<body>
+
+  <div class="console-body" id="consoleBody">
+    <div class="top-section">
+      <button id="btnFullscreen" class="fs-btn" title="Toggle Fullscreen">⛶</button>
+      <div class="brand-title">BRICK GAME</div>
+      <div class="brand-sub">9999 in 1</div>
+      <div class="speaker-grill">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- LCD Display -->
+    <div class="screen-bezel">
+      <div class="screen-glass">
+        <!-- Main Game Screen (10 x 20) -->
+        <div class="game-area">
+          <canvas id="mainCanvas" width="200" height="400"></canvas>
+        </div>
+
+        <!-- Side Panel -->
+        <div class="side-panel">
+          <div class="info-box">
+            <span class="info-label">GAME</span>
+            <span id="gameCodeDisplay" class="lcd-text">--</span>
+          </div>
+
+          <div class="info-box">
+            <span class="info-label">SCORE</span>
+            <span id="scoreDisplay" class="lcd-text">00000</span>
+          </div>
+
+          <div class="info-box">
+            <span class="info-label">HI-SCORE</span>
+            <span id="hiScoreDisplay" class="lcd-text">00000</span>
+          </div>
+
+          <div class="info-box">
+            <span class="info-label">LINES</span>
+            <span id="linesDisplay" class="lcd-text">00</span>
+          </div>
+
+          <div class="info-box">
+            <span class="info-label">LEVEL</span>
+            <span id="levelDisplay" class="lcd-text">01</span>
+          </div>
+
+          <div class="info-box next-box">
+            <span class="info-label">NEXT</span>
+            <canvas id="nextCanvas" width="60" height="60"></canvas>
+          </div>
+
+          <div class="status-box">
+            <span id="pauseStatus" class="status-indicator">PAUSE</span>
+            <span id="soundStatus" class="status-indicator">♪</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- System Controls -->
+    <div class="system-controls">
+      <div class="sys-btn-wrap">
+        <button class="sys-btn" data-action="POWER"></button>
+        <span class="sys-label">ON/OFF</span>
+      </div>
+      <div class="sys-btn-wrap">
+        <button class="sys-btn" data-action="SOUND"></button>
+        <span class="sys-label">SOUND</span>
+      </div>
+      <div class="sys-btn-wrap">
+        <button class="sys-btn" data-action="PAUSE"></button>
+        <span class="sys-label">START/PAUSE</span>
+      </div>
+      <div class="sys-btn-wrap">
+        <button class="sys-btn" data-action="RESET"></button>
+        <span class="sys-label">RESET</span>
+      </div>
+    </div>
+
+    <!-- D-Pad & Action Buttons -->
+    <div class="primary-controls">
+      <div class="dpad-cross">
+        <button class="game-btn dpad-btn dpad-up" data-action="UP" aria-label="Up"></button>
+        <button class="game-btn dpad-btn dpad-left" data-action="LEFT" aria-label="Left"></button>
+        <div class="dpad-center-hub"></div>
+        <button class="game-btn dpad-btn dpad-right" data-action="RIGHT" aria-label="Right"></button>
+        <button class="game-btn dpad-btn dpad-down" data-action="DOWN" aria-label="Down"></button>
+      </div>
+
+      <div class="action-container">
+        <button class="game-btn action-rotate" data-action="ROTATE" aria-label="Rotate / Fire"></button>
+        <span class="action-label">ROTATE / FIRE</span>
+      </div>
+    </div>
+
+    <div class="bottom-stripe"></div>
+  </div>
+
+  <!-- Scripts Loading -->
+  <script src="js/console-controller.js"></script>
+  <!-- கேம்கள் ஒவ்வொன்றாக இங்கு இணைக்கப்படும் -->
+  <script src="js/game/tetris.js"></script>
+</body>
+</html>
